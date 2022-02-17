@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:mealsapp/Screens/category_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,27 +12,23 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
+        accentColor: Colors.amber,
+        //colorScheme: Theme.of(context).colorScheme.copyWith(primary
+          //  : Colors.deepOrange),
+        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        textTheme: ThemeData.light().textTheme.copyWith(
+          bodyText1: TextStyle(color: Color.fromRGBO(20, 51, 51, 1),),
+          bodyText2: TextStyle(color: Color.fromRGBO(20, 51, 51, 1),),
+          subtitle1: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
+        ),
       ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Meals Application'),),
-      body: Center(
-        child: Text('Welcome to Meals App'),
-      ),
+      home: CategoryScreen(),
     );
   }
 }
