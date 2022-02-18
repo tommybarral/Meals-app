@@ -4,6 +4,8 @@ import '../Widgets/category_item.dart';
 
 class CategoryScreen extends StatelessWidget {
 
+  static const routeName = '/Category_screen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +25,7 @@ class CategoryScreen extends StatelessWidget {
           children: DUMMY_CATEGORIES.map((catData) {
             return Container(
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-              child: CategoryItem(catData.title, catData.color),
+              child: CategoryItem(catData.id, catData.title, catData.color),
             );
           }).toList(),
         ),
