@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:mealsapp/Screens/category_meals_screen.dart';
 import 'package:mealsapp/Screens/category_screen.dart';
+import 'package:mealsapp/Screens/meal_details_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,10 +30,11 @@ class MyApp extends StatelessWidget {
           subtitle1: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
         ),
       ),
-      home: CategoryScreen(),
+      initialRoute: '/',
       routes: {
-        //CategoryScreen.routeName: (context) => CategoryScreen(),
+        '/': (context) => CategoryScreen(),
         CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
+        MealDetailsScreen.routeName: (context) => MealDetailsScreen(),
       },
     );
   }
